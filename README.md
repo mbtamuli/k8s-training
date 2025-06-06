@@ -17,12 +17,12 @@ An interactive Kubernetes troubleshooting training platform that helps you pract
 ## 🛠️ Installation
 
 ```bash
-# Set variables (replace with your platform, e.g., linux-amd64, darwin-arm64)
-export VERSION=v0.1.0
-export OS_ARCH=linux-amd64
+# Set variables (replace with your platform, e.g., linux_arm64, darwin_amd64)
+export VERSION=0.1.0
+export OS_ARCH=darwin_arm64
 
 # Download and extract
-curl -L https://github.com/mbtamuli/k8s-training/releases/download/${VERSION}/k8s-training-${VERSION}-${OS_ARCH}.tar.gz | tar -xz
+curl -L https://github.com/mbtamuli/k8s-training/releases/download/v${VERSION}/k8s-training_${VERSION}_${OS_ARCH}.tar.gz | tar -xz
 
 # Move to PATH
 sudo mv k8s-training /usr/local/bin/
