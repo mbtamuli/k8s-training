@@ -2,15 +2,45 @@
 
 An interactive Kubernetes troubleshooting training platform that helps you practice real-world debugging scenarios in your own cluster.
 
+## 🎯 Features
+
+- **Real-world scenarios** for hands-on practice
+- **Isolated namespaces** for safe experimentation
+- **Hints system** with instructor-controlled guidance
+- **Compatible** with any Kubernetes cluster
+
 ## 📋 Prerequisites
 
-- Access to a Kubernetes cluster
-- `kubectl` configured with cluster access
-- [Releases page](https://github.com/mbtamuli/k8s-training/releases) contains instructions for downloading and installing the CLI tool.
+- Access to a Kubernetes cluster ([kind Quick Start](https://kind.sigs.k8s.io/docs/user/quick-start/))
+- `kubectl` configured with cluster access (`kubectl get nodes` should work)
 
-### Configuration Options
+## 🛠️ Installation
 
-The CLI accepts kubeconfig in priority order(higher priority overrides lower):
+```bash
+# Set variables (replace with your platform, e.g., linux-amd64, darwin-arm64)
+export VERSION=v0.1.0
+export OS_ARCH=linux-amd64
+
+# Download and extract
+curl -L https://github.com/mbtamuli/k8s-training/releases/download/${VERSION}/k8s-training-${VERSION}-${OS_ARCH}.tar.gz | tar -xz
+
+# Move to PATH
+sudo mv k8s-training /usr/local/bin/
+chmod +x /usr/local/bin/k8s-training
+```
+
+**Verify Installation:**
+
+```bash
+k8s-training --help
+```
+
+You should see the help output confirming successful installation.
+
+## ⚙️ Configuration
+
+The CLI accepts kubeconfig in priority order (higher priority overrides lower):
+
 ```bash
 # Using kubeconfig flag
 k8s-training scenario create volume-void --kubeconfig /path/to/kubeconfig
@@ -58,12 +88,5 @@ k8s-training scenario create volume-void
    ```bash
    k8s-training scenario delete volume-void
    ```
-
-## 🎯 Features
-
-- **Real-world scenarios** for hands-on practice
-- **Isolated namespaces** for safe experimentation
-- **Hints system** with instructor-controlled guidance
-- **Compatible** with any Kubernetes cluster
 
 **Happy troubleshooting!** 🚢⚓
